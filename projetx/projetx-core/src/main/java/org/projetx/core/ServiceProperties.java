@@ -1,4 +1,4 @@
-package org.projetx.back.entity;
+package org.projetx.core;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

@@ -6,10 +6,9 @@
 		<artifactId>projetx</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
-	<artifactId>projetx-back</artifactId>
-	<name>ProjectX-Back</name>
-	<description>ProjetX Back End</description>
-
+	<artifactId>projetx-repo</artifactId>
+	<name>ProjectX repository</name>
+	<description>ProjectX repository</description>
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.8</java.version>
@@ -18,28 +17,30 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-
-
 		<dependency>
 			<groupId>org.projetx</groupId>
-			<artifactId>projetx-core</artifactId>
+			<artifactId>projetx-model</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
-
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<!-- <executions> -->
+				<!-- <execution> -->
+				<!-- <goals> -->
+				<!-- <goal>repackage</goal> -->
+				<!-- </goals> -->
+				<!-- </execution> -->
+				<!-- </executions> -->
+				<!-- <configuration> -->
+				<!-- <mainClass>${start-class}</mainClass> -->
+				<!-- </configuration> -->
 			</plugin>
 		</plugins>
 	</build>

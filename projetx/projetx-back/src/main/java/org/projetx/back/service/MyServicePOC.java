@@ -1,6 +1,6 @@
 package org.projetx.back.service;
 
-import org.projetx.back.entity.ServiceProperties;
+import org.projetx.core.ServiceProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 
