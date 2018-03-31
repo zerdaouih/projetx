@@ -1,4 +1,4 @@
-package org.projetx.front;
+	package org.projetx.front;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

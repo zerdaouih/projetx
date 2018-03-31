@@ -1,12 +1,17 @@
 package org.projetx.model;
 
 import java.io.Serializable;
+import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 
 /**
  * class representing a user.
@@ -15,17 +20,23 @@ import javax.persistence.Id;
  *
  */
 @SuppressWarnings("serial")
-@Entity(name="projetxuser")
+@Entity(name="user")
 public class User implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
+	@Column(name = "user_id")
 	private int id;
-	@Column
+	@Column(name = "name")
 	private String userName;
-	@Column
+	@Column(name = "password")
 	private String password;
-
+	@Column(name = "active")
+	private int active;
+	@ManyToMany(cascade = CascadeType.ALL)
+	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	private Set<Role> roles;
+	
 	public User() {
 	}
 
@@ -33,7 +44,25 @@ public class User implements Serializable {
 		super();
 		this.userName = userName;
 		this.password = password;
+	}	
+	
+	public int getActive() {
+		return active;
 	}
+
+	public void setActive(int active) {
+		this.active = active;
+	}
+
+	public Set<Role> getRoles() {
+		return roles;
+	}
+
+	public void setRoles(Set<Role> roles) {
+		this.roles = roles;
+	}
+
+
 
 	public int getId() {
 		return id;
@@ -61,7 +90,8 @@ public class User implements Serializable {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", userName=" + userName + ", password=" + password + "]";
+		return "User [id=" + id + ", userName=" + userName + ", password=" + password + ", active=" + active
+				+ ", roles=" + roles + "]";
 	}
 
 }

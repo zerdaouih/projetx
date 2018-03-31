@@ -31,7 +31,15 @@ public class AccountController {
 	@RequestMapping(path = "/account")
 	public String home(@ModelAttribute User user) {
 		logger.info("user account : " + user.getUserName() + "is logged at " + LocalDateTime.now());
+		System.out.println(" user AFTER >>>" + user);
 		return "account";
 	}
+	@RequestMapping(path = "/account2")
+	public String home2(@ModelAttribute User user) {
+		logger.info("user account : " + user.getUserName() + "is logged at " + LocalDateTime.now());
+		return "accoun2t";
+	}
+	
+	
 
 }
